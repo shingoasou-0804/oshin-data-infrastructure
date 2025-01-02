@@ -1,0 +1,13 @@
+services:
+  terraform:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - .:/app:delegated
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
+volumes:
+  app:
